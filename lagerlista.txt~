@@ -16,4 +16,3 @@ WMS,Trafikverkets befintliga vägnät,crs=EPSG:4326&dpiMode=7&featureCount=10&fo
 WMS,Jordartskarta 1:1M,crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=jord:SE.GOV.SGU.JORD.JORDARTER.1M&styles=&url=http://resource.sgu.se/service/wms/130/jordarter_1M
 WMS,LST - Potentiellt förorenat,crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=5&styles=&url=http://ext-geoservices.lansstyrelsen.se/ArcGIS/services/Vektor/Lst_Miljodata/MapServer/WMSServer?version%3D1.3.0%26
 WMS,LST - Riksintressen,crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=1&layers=2&layers=3&layers=4&layers=5&layers=6&layers=7&layers=8&styles=&styles=&styles=&styles=&styles=&styles=&styles=&styles=&url=http://ext-geoservices.lansstyrelsen.se/ArcGIS/services/riksintressen/MapServer/WMSServer
-PostGIS,PostGIS från VirtServer,dbname='osm' host=192.168.0.53 port=5432 sslmode=disable key='tid' srid=3008 type=LINESTRING table="public"."highway" (geom) sql=

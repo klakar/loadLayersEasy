@@ -98,18 +98,7 @@ class loadLayersEasy:
 
 	# Läs in lista från listfil (om den finns)
 	if listfil != u"Listfil saknas":
-	   try: #först ett test
-	   	ff = codecs.open(listfil, 'r', 'utf-8')
-	   	inledning = ff.readline().strip()
-	   	ff.close()
-	   	if inledning != "# Ladda Lager QGIS Plugin av Klas Karlsson":
-			QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Konfigfilen är felaktig eller skadad \n Första raden måste vara:\n# Ladda Lager QGIS Plugin av Klas Karlsson\n\nProva att starta om tillägget eller starta om QGIS.")
-			s = QSettings()
-			s.setValue("loadlayerseasy/listfil", u"Listfil saknas")
-	   except:
-		s = QSettings()
-		s.setValue("loadlayerseasy/listfil", u"Listfil saknas")
-		QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Detta är inte en giltig konfigurationsfil.\nFörsök med en annan fil.\n\nDu måste starta om tillägget eller starta om QGIS.")
+
 	   # Läs in listan
 	   f = codecs.open(listfil, 'r', 'utf-8')
 	   for rad in f:
@@ -139,6 +128,18 @@ class loadLayersEasy:
 		self.dlg.listfil.setText(filnamn)
 		s = QSettings()
 		s.setValue("loadlayerseasy/listfil", filnamn)
+	   	try: #först ett test
+	   		ff = codecs.open(listfil, 'r', 'utf-8')
+	   		inledning = ff.readline().strip()
+	   		ff.close()
+	   		if inledning != "# Ladda Lager QGIS Plugin av Klas Karlsson":
+				QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Konfigfilen är felaktig eller skadad \n Första raden måste vara:\n# Ladda Lager QGIS Plugin av Klas Karlsson\n\nProva att starta om tillägget eller starta om QGIS.")
+				s = QSettings()
+				s.setValue("loadlayerseasy/listfil", u"Listfil saknas")
+	   	except:
+			s = QSettings()
+			s.setValue("loadlayerseasy/listfil", u"Listfil saknas")
+			QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Detta är inte en giltig konfigurationsfil.\nFörsök med en annan fil.\n\nDu måste starta om tillägget eller starta om QGIS.")
 
     def unload(self):
         # Remove the plugin menu item and icon

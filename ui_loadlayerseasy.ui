@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Ladda Lager</string>
+   <string>Ladda Lager - Load Layers</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -54,7 +54,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>351</width>
+     <width>191</width>
      <height>21</height>
     </rect>
    </property>
@@ -72,7 +72,7 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>Öppna eller skapa listfil</string>
+    <string>Öppna en listfil</string>
    </property>
    <property name="text">
     <string>...</string>
@@ -99,6 +99,36 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>10</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#959595;&quot;&gt;Add Layer to QGIS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+   </property>
+  </widget>
+  <zorder>listWidget</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder>label</zorder>
+  <zorder>findList</zorder>
+  <zorder>listfil</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <resources/>
  <connections>
