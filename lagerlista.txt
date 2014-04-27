@@ -9,6 +9,7 @@
 # OGR,Lagernamn,c:\sökväg\data.shp (kan hantera flera filtyper som stöds av OGR)
 # GPX,Lagernamn,sökväg/till/gpx/filen.gpx?type=track (använd track, route eller waypoint för att lägga till rätt typ)
 # WFS,Lagernamn,http://sökväg/till/server/wfs?srsname=EPSG:4326&typename=lager&version=1.0.0&request=GetFeature&service=WFS (Kopiera "lagerkälla" från QGIS)
+# POSTGIS,Lagernamn,dbname='db' host=server port=5432 sslmode=disable key='tid' srid=3008 type=LINESTRING table="public"."tabell" (geom) sql= (Kopiera "lagerkälla" från QGIS)
 # RASTER,Lagernamn,sökväg/till/raster/filen.tif (alla typer av rasterformat som stöds går bra)
 # WMS,Lagernamn,url=http://192.168.0.53:8080/geoserver/topp/wms?crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=states&styles=& (Kopiera "lagerkälla" från QGIS)
 
