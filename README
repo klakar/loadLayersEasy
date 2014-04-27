@@ -9,6 +9,8 @@ It uses some variables to config the tool and create (if not existing) a list of
 
 The layers are consistent with the QgsVectorLayer and QgsRasterLayer commands and in the layer list file examples of supported layers are included, just edit to your likeing.
 
+This plug-in has a minimal Swedish GUI.
+
 QGIS insticksprogram - Ladda Lager
 ==================================
 
@@ -16,3 +18,4 @@ Insticksprogrammet hämtar fördefinierade lager från en listfil och gör det e
 
 Tillägget läser innehåll från en utpekad fil. Programmet stödjer det vektor- och rasterlagerkommando som finns i QGIS och exempel på många av dessa lager visas i den inkluderade listfilen (lagerlista.txt). Med dessa som guide så skall det förhoppningsvis vara ganska enkelt att göra en egen lista.
 
+Du kan läsa mer om hur insticksprogrammet installeras och används på: http://geosupportsystem.wordpress.com/2014/05/05/eget-qgis-plugin-lagg-till-lager/
