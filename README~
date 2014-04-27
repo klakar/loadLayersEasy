@@ -16,4 +16,3 @@ Insticksprogrammet hämtar fördefinierade lager från en listfil och gör det e
 
 Programmet skapar en lista som mall, om det inte finns en på utpekad sökväg. Programmet stödjer det vektor- och rasterlagerkommando som finns i QGIS och exempel på många av dessa lager visas i den skapade listfilen. Med dessa som guide så skall det förhoppningsvis vara ganska enkelt att göra en egen lista.
 
-Läs mer på http://geosupportsystem.wordpress.com
