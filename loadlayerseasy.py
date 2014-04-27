@@ -28,7 +28,7 @@ import resources_rc
 # Import the code for the dialog
 from loadlayerseasydialog import loadLayersEasyDialog
 import os.path
-# Anpassa till UTF-8
+# Anpassning till UTF-8
 import codecs
 # Lägg till systemvariabler
 import sys
@@ -38,7 +38,7 @@ typ = []
 namn = []
 kommando = []
 
-# Detta är en class som ersätter SWITCH/CASE kommandot i andra språk
+# Detta är en class som ersätter SWITCH/CASE kommandot i andra språk, används senare.
 class switch(object):
     def __init__(self, value):
         self.value = value
