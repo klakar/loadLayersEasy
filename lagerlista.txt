@@ -11,7 +11,7 @@
 # WFS,Lagernamn,http://sökväg/till/server/wfs?srsname=EPSG:4326&typename=lager&version=1.0.0&request=GetFeature&service=WFS (Kopiera "lagerkälla" från QGIS)
 # POSTGIS,Lagernamn,dbname='db' host=server port=5432 sslmode=disable key='tid' srid=3008 type=LINESTRING table="public"."tabell" (geom) sql= (Kopiera "lagerkälla" från QGIS)
 # RASTER,Lagernamn,sökväg/till/raster/filen.tif (alla typer av rasterformat som stöds går bra)
-# WMS,Lagernamn,url=http://192.168.0.53:8080/geoserver/topp/wms?crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=states&styles=& (Kopiera "lagerkälla" från QGIS)
+# WMS,Lagernamn,url=http://server:8080/geoserver/topp/wms?crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=states&styles=& (Kopiera "lagerkälla" från QGIS)
 
 WMS,Trafikverkets befintliga vägnät,crs=EPSG:4326&dpiMode=7&featureCount=10&format=image/png&layers=vagnat_befintlig&styles=&url=http://geo-ri.trafikverket.se/MapService/wms.axd/Riksintressen2012
 
