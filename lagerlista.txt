@@ -1,6 +1,6 @@
 # Ladda Lager QGIS Plugin av Klas Karlsson
 #
-# OBS Radera eller ändra INTE första raden, det är en kontrollrad för att man inte skall läsa in en slumpvis fil av misstag.
+# OBS Radera eller ändra INTE första raden ovan, det är en kontrollrad för att man inte skall läsa in en slumpvis fil av misstag.
 # Detta är lagerlistan som QGIS-tillägget "Ladda Lager" läser för att skapa en valbar lista att lägga till lager på ett enkelt sätt.
 # Använd exemplen nedan för att själv sätta upp din lagerlista.
 # Du kan ha flera lagerlistor och öppna dessa i QGIS så länge du känner till sökvägen.
