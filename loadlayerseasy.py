@@ -59,7 +59,6 @@ class switch(object):
         else:
             return False
 
-
 class loadLayersEasy:
 
     def __init__(self, iface):
@@ -90,39 +89,8 @@ class loadLayersEasy:
         # connect the action to the run method
         self.action.triggered.connect(self.run)
 
-	# Ladda listan med lager från listfilen
-	# Hämta sökvägen från variabel
-	s = QSettings()
-	listfil = s.value("loadlayerseasy/listfil", u"Listfil saknas")
-	self.dlg.listfil.setText(listfil)
-
-	# Läs in lista från listfil (om den finns)
-	if listfil != u"Listfil saknas":
-	   try: #först ett test
-	   	ff = codecs.open(listfil, 'r', 'utf-8')
-	   	inledning = ff.readline().strip()
-	   	ff.close()
-	   	if inledning != "# Ladda Lager QGIS Plugin av Klas Karlsson":
-			QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Konfigfilen är felaktig eller skadad \n Första raden måste vara:\n# Ladda Lager QGIS Plugin av Klas Karlsson\n\nProva att starta om tillägget eller starta om QGIS.")
-			s = QSettings()
-			s.setValue("loadlayerseasy/listfil", u"Listfil saknas")
-	   except:
-		s = QSettings()
-		s.setValue("loadlayerseasy/listfil", u"Listfil saknas")
-		QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Detta är inte en giltig konfigurationsfil.\nFörsök med en annan fil.\n\nDu måste starta om tillägget eller starta om QGIS.")
-	   # Läs in listan
-	   f = codecs.open(listfil, 'r', 'utf-8')
-	   for rad in f:
-		fildata = rad.strip() # läs in raden och ta bort nyrad-tecken (strip)
-		if fildata != "":
-		    if fildata[:1] != "#":
-			lista = fildata.split(",")
-			typ.append( lista[0] )
-			namn.append( lista[1] )
-			kommando.append( lista[2] )
-			self.dlg.listWidget.addItem(lista[1])
-	   f.close()
-	    
+	# kör ladda lista
+	self.uppdateraLista()
 
 	# Skapa händelse vid listfil-knappen
 	self.dlg.findList.clicked.connect(self.hittaLista)
@@ -139,6 +107,43 @@ class loadLayersEasy:
 		self.dlg.listfil.setText(filnamn)
 		s = QSettings()
 		s.setValue("loadlayerseasy/listfil", filnamn)
+		self.uppdateraLista()
+
+    def uppdateraLista(self):
+	# Kod för att uppdatera listan med data från filen
+	# Ladda listan med lager från listfilen
+	# Hämta sökvägen från variabel
+	s = QSettings()
+	listfil = s.value("loadlayerseasy/listfil", u"Lagerlista saknas")
+	self.dlg.listfil.setText(listfil)
+
+	# Läs in lista från listfil (om den finns)
+	if listfil != u"Lagerlista saknas":
+	   try: #först ett test
+	   	ff = codecs.open(listfil, 'r', 'utf-8')
+	   	inledning = ff.readline().strip()
+	   	ff.close()
+	   	if inledning != "# Ladda Lager QGIS Plugin av Klas Karlsson":
+			QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Konfigfilen är felaktig eller skadad \n Första raden måste vara:\n# Ladda Lager QGIS Plugin av Klas Karlsson\n\nLagerrader skrivs på formen (exempel):\nOGR,Lagernamn,sökväg/filnamn.shp\n\nLadda om tillägget eller starta om QGIS.")
+			s = QSettings()
+			s.remove("loadlayerseasy/listfil")
+	   except:		
+		s = QSettings()
+		s.remove("loadlayerseasy/listfil")
+		self.dlg.listfil.setText("Lagerlista saknas")
+		QMessageBox.information(self.iface.mainWindow(),u"Fel", u"Denna fil kan inte läsas.\nFörsök med en annan fil.\n\nDu måste starta om tillägget eller starta om QGIS.")
+	   # Läs in listan
+	   f = codecs.open(listfil, 'r', 'utf-8')
+	   for rad in f:
+		fildata = rad.strip() # läs in raden och ta bort nyrad-tecken (strip)
+		if fildata != "":
+		    if fildata[:1] != "#":
+			lista = fildata.split(",")
+			typ.append( lista[0] )
+			namn.append( lista[1] )
+			kommando.append( lista[2] )
+			self.dlg.listWidget.addItem(lista[1])
+	   f.close()
 
     def unload(self):
         # Remove the plugin menu item and icon
