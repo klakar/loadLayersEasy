@@ -89,9 +89,6 @@ class loadLayersEasy:
         # connect the action to the run method
         self.action.triggered.connect(self.run)
 
-	# kör ladda lista
-	self.uppdateraLista()
-
 	# Skapa händelse vid listfil-knappen
 	self.dlg.findList.clicked.connect(self.hittaLista)
 
@@ -112,6 +109,8 @@ class loadLayersEasy:
     def uppdateraLista(self):
 	# Kod för att uppdatera listan med data från filen
 	# Ladda listan med lager från listfilen
+	# Töm befintlig lista först
+	self.dlg.listWidget.clear()
 	# Hämta sökvägen från variabel
 	s = QSettings()
 	listfil = s.value("loadlayerseasy/listfil", u"Lagerlista saknas")
@@ -152,6 +151,8 @@ class loadLayersEasy:
 
     # run method that performs all the real work
     def run(self):
+	# kör ladda lista
+	self.uppdateraLista()
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
