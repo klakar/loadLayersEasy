@@ -16,4 +16,4 @@ Insticksprogrammet hämtar fördefinierade lager från en listfil och gör det e
 
 Programmet har en lista som mall, "lagerlista.txt". Programmet stödjer det vektor- och rasterlagerkommando som finns i QGIS och exempel på många av dessa lager visas i den skapade listfilen. Med dessa som guide så skall det förhoppningsvis vara ganska enkelt att göra en egen lista.
 
-Läs mer på http://geosupportsystem.wordpress.com
+Läs mer på http://geosupportsystem.wordpress.com/2014/05/05/eget-qgis-plugin-lagg-till-lager/
